@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SND AUTO</title>
+
+<style>
+
+body{margin:0;font-family:Arial;background:#f3f4f6;color:#222}
+
+header{background:#111827;color:white;padding:25px;text-align:center}
+
+header h1{margin:0;font-size:32px}
+
+header span{color:#f5b800}
+
+.hero{text-align:center;background:#273449;color:white;padding:35px 15px}
+
+main{max-width:1000px;margin:auto;padding:20px}
+
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;background:white;padding:15px;border-radius:10px}
+
+input,select,button{padding:12px;border:1px solid #ccc;border-radius:6px;font-size:15px}
+
+button{background:#f5b800;border:0;font-weight:bold;cursor:pointer}
+
+.cars{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:20px}
+
+.car{background:white;border-radius:10px;overflow:hidden}
+
+.car img{width:100%;height:180px;object-fit:cover}
+
+.info{padding:15px}
+
+.price{font-size:22px;font-weight:bold;color:#a87500}
+
+.contact{display:block;background:#111827;color:white;text-align:center;padding:12px;text-decoration:none;border-radius:5px}
+
+footer{text-align:center;background:#111827;color:white;padding:25px;margin-top:30px}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>SND <span>AUTO</span></h1>
+
+<p>Mașini de vânzare în România</p>
+
+</header>
+
+<section class="hero">
+
+<h2>Găsește mașina potrivită pentru tine</h2>
+
+<p>Caută, compară și alege!</p>
+
+</section>
+
+<main>
+
+<h2>Caută o mașină</h2>
+
+<div class="filters">
+
+<select id="marca">
+
+<option value="">Toate mărcile</option>
+
+<option>BMW</option><option>Audi</option>
+
+<option>Volkswagen</option><option>Dacia</option>
+
+<option>Mercedes-Benz</option><option>Ford</option>
+
+<option>Skoda</option>
+
+</select>
+
+<input id="model" placeholder="Model">
+
+<select id="combustibil">
+
+<option value="">Combustibil</option>
+
+<option>Diesel</option><option>Benzină</option>
+
+<option>Hibrid</option><option>Electric</option>
+
+</select>
+
+<input id="an" type="number" placeholder="An minim">
+
+<input id="pret" type="number" placeholder="Preț maxim (€)">
+
+<button onclick="filtreaza()">CAUTĂ</button>
+
+</div>
+
+<h2>Mașini disponibile</h2>
+
+<p id="numar"></p>
+
+<div class="cars" id="masini"></div>
+
+</main>
+
+<footer>
+
+<h3>SND AUTO</h3>
+
+<p>Contact: adaugă numărul tău de telefon</p>
+
+<p>© 2026 SND AUTO</p>
+
+</footer>
+
+<script>
+
+const masini=[
+
+{marca:"BMW",model:"Seria 3",an:2019,combustibil:"Diesel",pret:18900,km:"145.000 km",img:"https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80"},
+
+{marca:"Audi",model:"A4",an:2020,combustibil:"Diesel",pret:21500,km:"120.000 km",img:"https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80"},
+
+{marca:"Volkswagen",model:"Golf",an:2018,combustibil:"Benzină",pret:12500,km:"110.000 km",img:"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80"},
+
+{marca:"Dacia",model:"Duster",an:2021,combustibil:"Diesel",pret:16500,km:"85.000 km",img:"https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80"}
+
+];
+
+function afiseaza(lista){
+
+document.getElementById("numar").textContent=lista.length+" mașini găsite";
+
+document.getElementById("masini").innerHTML=lista.map(m=>`
+
+<article class="car">
+
+<img src="${m.img}" alt="${m.marca} ${m.model}">
+
+<div class="info">
+
+<h3>${m.marca} ${m.model}</h3>
+
+<p>${m.an} · ${m.km} · ${m.combustibil}</p>
+
+<p class="price">${m.pret.toLocaleString("ro-RO")} €</p>
+
+<a class="contact" href="mailto:contact@sndauto.ro?subject=Interes%20pentru%20${encodeURIComponent(m.marca+" "+m.model)}">Solicită informații</a>
+
+</div></article>`).join("");
+
+}
+
+function filtreaza(){
+
+const marca=document.getElementById("marca").value;
+
+const model=document.getElementById("model").value.toLowerCase();
+
+const combustibil=document.getElementById("combustibil").value;
+
+const an=Number(document.getElementById("an").value)||0;
+
+const pret=Number(document.getElementById("pret").value)||Infinity;
+
+afiseaza(masini.filter(m=>(!marca||m.marca===marca)&&m.model.toLowerCase().includes(model)&&(!combustibil||m.combustibil===combustibil)&&m.an>=an&&m.pret<=pret));
+
+}
+
+afiseaza(masini);
+
+</script>
+
+</body>
+
+</html>
