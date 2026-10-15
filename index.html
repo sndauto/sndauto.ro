@@ -154,7 +154,16 @@ const money=n=>Number(n||0).toLocaleString('ro-RO',{style:'currency',currency:'E
 
 const safeUrl=s=>{try{let u=new URL(s);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return ''}};
 
-const imgs=c=>{let a=Array.isArray(c.image_urls)?c.image_urls:[];if(!a.length&&c.image_url)a=[c.image_url];return [...new Set(a.map(safeUrl).filter(Boolean))]};
+const imgs = c => {
+  let a = c.image_urls;
+  if (typeof a === 'string') {
+    try { a = JSON.parse(a); } catch { a = []; }
+  }
+  if (!Array.isArray(a)) a = [];
+  a = a.filter(x => typeof x === 'string' && x.trim());
+  if (a.length === 0 && c.image_url) a = [c.image_url];
+  return [...new Set(a.map(safeUrl).filter(Boolean))];
+};
 
 function message(id,text,error=false){$(id).className='status';$(id).style.color=error?'#b42318':'#164e9a';$(id).textContent=text}
 
