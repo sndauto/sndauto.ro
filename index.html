@@ -194,7 +194,7 @@ let q=db.from('cars').select('*').order('created_at',{ascending:false});
 if(!admin)q=q.eq('published',true);
 
 let {data,error}=await q;
-
+console.log('DATE ANUNȚURI:', data);
 if(error){$('cars').textContent='Nu s-au putut încărca anunțurile. Verifică setările Supabase.';console.error(error);return}
 
 cars=data||[];render();
