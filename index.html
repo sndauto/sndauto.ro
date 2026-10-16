@@ -14,7 +14,73 @@
 
 <style>
 
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#172033}header,footer{background:#101827;color:white;padding:22px}header div,footer div,main{max-width:1100px;margin:auto}header h1{margin:0}header span{color:#ff5252}.hero{padding:30px 18px;background:#164e9a;color:white}main{padding:20px 14px}.filters,.panel,.car,.modalbox{background:white;padding:16px;border-radius:12px;margin-bottom:18px}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.car{padding:0;overflow:hidden;border:1px solid #ddd}.car img{width:100%;height:200px;object-fit:cover}.body{padding:15px}.price{font-size:23px;font-weight:bold;color:#164e9a;margin:10px 0}input,select,textarea{font:inherit;padding:11px;width:100%;border:1px solid #ccc;border-radius:7px;margin:4px 0 12px}textarea{min-height:120px}button,.btn{padding:11px 15px;background:#164e9a;color:white;border:0;border-radius:7px;cursor:pointer;text-decoration:none;display:inline-block;margin:3px}button.red{background:#c62828}button.grey{background:#555}.hidden{display:none!important}.desc{white-space:pre-wrap;line-height:1.6;overflow-wrap:anywhere}.status{padding:10px;background:#eef4ff;margin:10px 0;border-radius:7px}.modal{position:fixed;inset:0;background:#000c;overflow:auto;padding:15px;z-index:5}.modalbox{max-width:800px;margin:20px auto}.bigphoto{width:100%;max-height:430px;object-fit:contain;background:#111}.thumbs{display:flex;gap:8px;overflow:auto}.thumbs img{width:85px;height:65px;object-fit:cover;cursor:pointer}.specs{color:#555;line-height:1.8}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.help{font-size:13px;color:#667085}a{color:inherit}footer a{color:#bcd6ff}
+*{box-sizing:border-box}
+
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#172033}
+
+header,footer{background:#101827;color:white;padding:22px}
+
+header div,footer div,main{max-width:1100px;margin:auto}
+
+header h1{margin:0}
+
+header span{color:#ff5252}
+
+.hero{padding:30px 18px;background:#164e9a;color:white}
+
+main{padding:20px 14px}
+
+.filters,.panel,.car,.modalbox{background:white;padding:16px;border-radius:12px;margin-bottom:18px}
+
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+
+.car{padding:0;overflow:hidden;border:1px solid #ddd}
+
+.car img{width:100%;height:200px;object-fit:cover}
+
+.body{padding:15px}
+
+.price{font-size:23px;font-weight:bold;color:#164e9a;margin:10px 0}
+
+input,select,textarea{font:inherit;padding:11px;width:100%;border:1px solid #ccc;border-radius:7px;margin:4px 0 12px}
+
+textarea{min-height:120px}
+
+button,.btn{padding:11px 15px;background:#164e9a;color:white;border:0;border-radius:7px;cursor:pointer;text-decoration:none;display:inline-block;margin:3px}
+
+button:disabled{opacity:.6;cursor:wait}
+
+button.red{background:#c62828}
+
+button.grey{background:#555}
+
+.hidden{display:none!important}
+
+.desc{white-space:pre-wrap;line-height:1.6;overflow-wrap:anywhere}
+
+.status{padding:10px;background:#eef4ff;margin:10px 0;border-radius:7px;overflow-wrap:anywhere}
+
+.modal{position:fixed;inset:0;background:#000c;overflow:auto;padding:15px;z-index:5}
+
+.modalbox{max-width:800px;margin:20px auto}
+
+.bigphoto{width:100%;max-height:430px;object-fit:contain;background:#111}
+
+.thumbs{display:flex;gap:8px;overflow:auto;margin:10px 0}
+
+.thumbs img{width:85px;height:65px;object-fit:cover;cursor:pointer}
+
+.specs{color:#555;line-height:1.8}
+
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+
+.help{font-size:13px;color:#667085}
+
+a{color:inherit}
+
+footer a{color:#bcd6ff}
 
 </style>
 
@@ -22,9 +88,23 @@
 
 <body>
 
-<header><div><h1>SND <span>AUTO</span></h1><p>Autoturisme de vânzare · Botoșani</p></div></header>
+<header><div>
 
-<section class="hero"><h2>Găsește mașina potrivită pentru tine</h2><p>Autoturisme disponibile la SND AUTO.</p><a class="btn" href="https://wa.me/40746621051">Contact WhatsApp</a></section>
+<h1>SND <span>AUTO</span></h1>
+
+<p>Autoturisme de vânzare · Botoșani</p>
+
+</div></header>
+
+<section class="hero">
+
+<h2>Găsește mașina potrivită pentru tine</h2>
+
+<p>Autoturisme disponibile la SND AUTO.</p>
+
+<a class="btn" href="https://wa.me/40746621051">Contact WhatsApp</a>
+
+</section>
 
 <main>
 
@@ -34,7 +114,15 @@
 
 <input id="search" placeholder="Caută marca sau modelul">
 
-<select id="fuelFilter"><option value="">Combustibil</option><option>Benzină</option><option>Motorină</option><option>Hibrid</option><option>Electric</option><option>GPL</option><option>Altul</option></select>
+<select id="fuelFilter">
+
+<option value="">Combustibil</option>
+
+<option>Benzină</option><option>Motorină</option><option>Hibrid</option>
+
+<option>Electric</option><option>GPL</option><option>Altul</option>
+
+</select>
 
 <input id="minPrice" type="number" placeholder="Preț minim (€)">
 
@@ -54,11 +142,15 @@
 
 <form id="loginForm">
 
-<label>Email administrator</label><input id="email" type="email" required>
+<label>Email administrator</label>
 
-<label>Parolă</label><input id="password" type="password" required>
+<input id="email" type="email" required>
 
-<button>Autentificare</button>
+<label>Parolă</label>
+
+<input id="password" type="password" required>
+
+<button type="submit">Autentificare</button>
 
 </form>
 
@@ -86,21 +178,39 @@
 
 <div><label>Kilometraj (km)</label><input id="mileage" type="number" min="0"></div>
 
-<div><label>Combustibil</label><select id="fuel"><option value="">Selectează</option><option>Benzină</option><option>Motorină</option><option>Hibrid</option><option>Electric</option><option>GPL</option><option>Altul</option></select></div>
+<div><label>Combustibil</label>
+
+<select id="fuel">
+
+<option value="">Selectează</option>
+
+<option>Benzină</option><option>Motorină</option><option>Hibrid</option>
+
+<option>Electric</option><option>GPL</option><option>Altul</option>
+
+</select></div>
 
 <div><label>Localitate</label><input id="city" value="Botoșani"></div>
 
-<div><label>Publicat</label><select id="published"><option value="true">Da</option><option value="false">Nu, ascuns</option></select></div>
+<div><label>Publicat</label>
+
+<select id="published"><option value="true">Da</option><option value="false">Nu, ascuns</option></select>
 
 </div>
 
-<label>Descriere (poți folosi paragrafe)</label><textarea id="description" placeholder="Descrierea mașinii..."></textarea>
+</div>
 
-<label>Fotografii (poți selecta mai multe)</label><input id="photos" type="file" accept="image/*" multiple>
+<label>Descriere</label>
+
+<textarea id="description" placeholder="Descrierea mașinii..."></textarea>
+
+<label>Fotografii (poți selecta mai multe)</label>
+
+<input id="photos" type="file" accept="image/*" multiple>
 
 <p class="help" id="photoHelp">La editare, fotografiile noi se adaugă la cele existente.</p>
 
-<button id="saveButton">Adaugă autoturism</button>
+<button id="saveButton" type="submit">Adaugă autoturism</button>
 
 <button id="cancelEdit" class="grey hidden" type="button">Anulează editarea</button>
 
@@ -120,13 +230,27 @@
 
 </main>
 
-<footer><div><h2>SND AUTO</h2><p>Botoșani, România</p><p>Telefon: <a href="tel:+40746621051">+40 746 621 051</a></p><p>WhatsApp: <a href="https://wa.me/40746621051">Trimite mesaj</a></p><p>Email: <a href="mailto:sndauto10@gmail.com">sndauto10@gmail.com</a></p><p><a href="https://tbibank.ro/finantare-auto/" target="_blank" rel="noopener">Finanțare prin TBI Bank</a></p></div></footer>
+<footer><div>
+
+<h2>SND AUTO</h2>
+
+<p>Botoșani, România</p>
+
+<p>Telefon: <a href="tel:+40746621051">+40 746 621 051</a></p>
+
+<p>WhatsApp: <a href="https://wa.me/40746621051">Trimite mesaj</a></p>
+
+<p>Email: <a href="mailto:sndauto10@gmail.com">sndauto10@gmail.com</a></p>
+
+<p><a href="https://tbibank.ro/finantare-auto/" target="_blank" rel="noopener">Finanțare prin TBI Bank</a></p>
+
+</div></footer>
 
 <div id="detailModal" class="modal hidden">
 
 <div class="modalbox">
 
-<button id="closeModal" class="grey">Închide ✕</button>
+<button id="closeModal" class="grey" type="button">Închide ✕</button>
 
 <div id="detailContent"></div>
 
@@ -138,246 +262,605 @@
 
 (() => {
 
-const URL='https://jjmsdvhdtgqzhjwrnojn.supabase.co';
+'use strict';
 
-const KEY='sb_publishable_gQWDi5CM3BjoTJv518Qd8g_5QMYM10l';
+const SUPABASE_URL = 'https://jjmsdvhdtgqzhjwrnojn.supabase.co';
 
-const db=window.supabase.createClient(URL,KEY);
+const KEY = 'sb_publishable_gQWDi5CM3BjoTJv518Qd8g_5QMYM10l';
 
-const $=id=>document.getElementById(id);
+const db = window.supabase.createClient(SUPABASE_URL, KEY);
 
-let cars=[],user=null,admin=false,editing=null,detailPhotos=[];
+const $ = id => document.getElementById(id);
 
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let cars = [], user = null, admin = false, editing = null;
 
-const money=n=>Number(n||0).toLocaleString('ro-RO',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+let detailPhotos = [];
 
-const safeUrl=s=>{try{let u=new URL(s);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return ''}};
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({
 
-const imgs = c => {
-  let a = c.image_urls;
-  if (typeof a === 'string') {
-    try { a = JSON.parse(a); } catch { a = []; }
+'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+
+}[c]));
+
+const money = n => Number(n || 0).toLocaleString('ro-RO', {
+
+style:'currency', currency:'EUR', maximumFractionDigits:0
+
+});
+
+/* IMPORTANT: folosim URL-ul nativ al browserului.
+
+   Nu numim variabila adresei Supabase "URL". */
+
+const safeUrl = s => {
+
+  try {
+
+    const u = new window.URL(String(s).trim());
+
+    return ['https:', 'http:'].includes(u.protocol) ? u.href : '';
+
+  } catch {
+
+    return '';
+
   }
-  if (!Array.isArray(a)) a = [];
-  a = a.filter(x => typeof x === 'string' && x.trim());
-  if (a.length === 0 && c.image_url) a = [c.image_url];
-  return [...new Set(a.map(safeUrl).filter(Boolean))];
+
 };
 
-function message(id,text,error=false){$(id).className='status';$(id).style.color=error?'#b42318':'#164e9a';$(id).textContent=text}
+/* Citește atât lista image_urls, cât și fotografia veche image_url.
 
-function card(c,manage=false){
+   Acceptă lista ca array sau ca text JSON. */
 
-let im=imgs(c),photo=im.length?`<img src="${esc(im[0])}" alt="${esc(c.make)} ${esc(c.model)}" loading="lazy">`:'<div style="height:200px;display:grid;place-items:center;background:#eee">Fără fotografie</div>';
+function imgs(c) {
 
-return `<article class="car">${photo}<div class="body"><h3>${esc(c.make)} ${esc(c.model)}</h3><div class="price">${money(c.price)}</div><div class="specs">${esc(c.year)} · ${c.mileage==null?'Km nespecificați':Number(c.mileage).toLocaleString('ro-RO')+' km'}<br>${esc(c.fuel||'')} · ${esc(c.city||'')}</div><button data-detail="${esc(c.id)}">Vezi detalii</button>${manage?`<button data-edit="${esc(c.id)}">Editează</button><button class="red" data-delete="${esc(c.id)}">Șterge</button><p class="help">${c.published?'Publicat':'Ascuns'}</p>`:''}</div></article>`;
+  let a = c?.image_urls;
 
-}
+  if (typeof a === 'string') {
 
-function render(){
+    try { a = JSON.parse(a); }
 
-let term=$('search').value.toLocaleLowerCase('ro'),fuel=$('fuelFilter').value,min=$('minPrice').value,max=$('maxPrice').value;
+    catch { a = []; }
 
-let list=cars.filter(c=>(admin||c.published)&&(`${c.make} ${c.model}`).toLocaleLowerCase('ro').includes(term)&&(!fuel||c.fuel===fuel)&&(!min||Number(c.price)>=Number(min))&&(!max||Number(c.price)<=Number(max)));
+  }
 
-$('cars').innerHTML=list.length?list.map(c=>card(c)).join(''):'<p>Nu există mașini care corespund căutării.</p>';
+  if (!Array.isArray(a)) a = [];
 
-$('adminCars').innerHTML=admin?(cars.length?cars.map(c=>card(c,true)).join(''):'<p>Nu ai încă anunțuri.</p>'):'';
+  a = a.flat(Infinity).filter(x => typeof x === 'string' && x.trim());
 
-}
+  if (a.length === 0 && c?.image_url) {
 
-async function loadCars(){
+    a = [c.image_url];
 
-let q=db.from('cars').select('*').order('created_at',{ascending:false});
+  }
 
-if(!admin)q=q.eq('published',true);
-
-let {data,error}=await q;
-console.log('DATE ANUNȚURI:', data);
-if(error){$('cars').textContent='Nu s-au putut încărca anunțurile. Verifică setările Supabase.';console.error(error);return}
-
-cars=data||[];render();
+  return [...new Set(a.map(safeUrl).filter(Boolean))];
 
 }
 
-function setAdmin(){
+function message(id, text, error = false) {
 
-$('login').classList.toggle('hidden',!!user);
+  $(id).className = 'status';
 
-$('adminPanel').classList.toggle('hidden',!admin);
+  $(id).style.color = error ? '#b42318' : '#164e9a';
 
-if(user&&!admin)message('loginMessage','Contul conectat nu are rolul de administrator.',true);
-
-else $('loginMessage').textContent='';
-
-if(admin){message('adminStatus','Autentificat ca administrator: '+user.email);loadCars()}
+  $(id).textContent = text;
 
 }
 
-async function refreshAuth(){
+function card(c, manage = false) {
 
-let {data}=await db.auth.getSession();user=data.session?.user||null;
+  const im = imgs(c);
 
-admin=!!user&&user.app_metadata?.role==='admin';
+  const photo = im.length
 
-setAdmin();await loadCars();
+    ? `<img src="${esc(im[0])}" alt="${esc(c.make)} ${esc(c.model)}" loading="lazy">`
+
+    : '<div style="height:200px;display:grid;place-items:center;background:#eee">Fără fotografie</div>';
+
+  return `<article class="car">
+
+    ${photo}
+
+    <div class="body">
+
+      <h3>${esc(c.make)} ${esc(c.model)}</h3>
+
+      <div class="price">${money(c.price)}</div>
+
+      <div class="specs">${esc(c.year)} · ${c.mileage == null ? 'Km nespecificați' : Number(c.mileage).toLocaleString('ro-RO') + ' km'}<br>${esc(c.fuel || '')} · ${esc(c.city || '')}</div>
+
+      <button type="button" data-detail="${esc(c.id)}">Vezi detalii</button>
+
+      ${manage ? `<button type="button" data-edit="${esc(c.id)}">Editează</button>
+
+      <button type="button" class="red" data-delete="${esc(c.id)}">Șterge</button>
+
+      <p class="help">${c.published ? 'Publicat' : 'Ascuns'}</p>` : ''}
+
+    </div>
+
+  </article>`;
 
 }
 
-$('loginForm').addEventListener('submit',async e=>{
+function render() {
 
-e.preventDefault();$('loginMessage').textContent='Se autentifică...';
+  const term = $('search').value.toLocaleLowerCase('ro');
 
-let {data,error}=await db.auth.signInWithPassword({email:$('email').value,password:$('password').value});
+  const fuel = $('fuelFilter').value;
 
-if(error){message('loginMessage','Autentificare nereușită: '+error.message,true);return}
+  const min = $('minPrice').value;
 
-user=data.user;admin=user.app_metadata?.role==='admin';
+  const max = $('maxPrice').value;
 
-if(!admin){await db.auth.signOut();user=null;message('loginMessage','Acest cont nu are drepturi de administrator.',true);setAdmin();return}
+  const list = cars.filter(c =>
 
-setAdmin();await loadCars();
+    (admin || c.published) &&
+
+    (`${c.make} ${c.model}`).toLocaleLowerCase('ro').includes(term) &&
+
+    (!fuel || c.fuel === fuel) &&
+
+    (!min || Number(c.price) >= Number(min)) &&
+
+    (!max || Number(c.price) <= Number(max))
+
+  );
+
+  $('cars').innerHTML = list.length
+
+    ? list.map(c => card(c)).join('')
+
+    : '<p>Nu există mașini care corespund căutării.</p>';
+
+  $('adminCars').innerHTML = admin
+
+    ? (cars.length ? cars.map(c => card(c, true)).join('') : '<p>Nu ai încă anunțuri.</p>')
+
+    : '';
+
+}
+
+async function loadCars() {
+
+  let q = db.from('cars').select('*').order('created_at', {ascending:false});
+
+  if (!admin) q = q.eq('published', true);
+
+  const {data, error} = await q;
+
+  if (error) {
+
+    $('cars').textContent = 'Nu s-au putut încărca anunțurile. Verifică setările Supabase.';
+
+    console.error('Eroare la încărcarea anunțurilor:', error);
+
+    return;
+
+  }
+
+  cars = data || [];
+
+  render();
+
+}
+
+function setAdmin() {
+
+  $('login').classList.toggle('hidden', !!user);
+
+  $('adminPanel').classList.toggle('hidden', !admin);
+
+  if (user && !admin) {
+
+    message('loginMessage', 'Contul conectat nu are rolul de administrator.', true);
+
+  } else {
+
+    $('loginMessage').textContent = '';
+
+  }
+
+  if (admin) {
+
+    message('adminStatus', 'Autentificat ca administrator: ' + user.email);
+
+  }
+
+}
+
+async function refreshAuth() {
+
+  const {data} = await db.auth.getSession();
+
+  user = data.session?.user || null;
+
+  admin = !!user && user.app_metadata?.role === 'admin';
+
+  setAdmin();
+
+  await loadCars();
+
+}
+
+$('loginForm').addEventListener('submit', async e => {
+
+  e.preventDefault();
+
+  $('loginMessage').textContent = 'Se autentifică...';
+
+  const {data, error} = await db.auth.signInWithPassword({
+
+    email: $('email').value,
+
+    password: $('password').value
+
+  });
+
+  if (error) {
+
+    message('loginMessage', 'Autentificare nereușită: ' + error.message, true);
+
+    return;
+
+  }
+
+  user = data.user;
+
+  admin = user.app_metadata?.role === 'admin';
+
+  if (!admin) {
+
+    await db.auth.signOut();
+
+    user = null;
+
+    message('loginMessage', 'Acest cont nu are drepturi de administrator.', true);
+
+    setAdmin();
+
+    return;
+
+  }
+
+  setAdmin();
+
+  await loadCars();
 
 });
 
-$('logout').onclick=async()=>{await db.auth.signOut();user=null;admin=false;resetForm();setAdmin();await loadCars()};
+$('logout').onclick = async () => {
 
-function resetForm(){
+  await db.auth.signOut();
 
-editing=null;$('carForm').reset();$('city').value='Botoșani';$('published').value='true';
+  user = null;
 
-$('formTitle').textContent='Adaugă autoturism';$('saveButton').textContent='Adaugă autoturism';
+  admin = false;
 
-$('cancelEdit').classList.add('hidden');$('photos').value='';$('photoHelp').textContent='La editare, fotografiile noi se adaugă la cele existente.';
+  resetForm();
 
-}
+  setAdmin();
 
-$('cancelEdit').onclick=resetForm;
+  await loadCars();
 
-$('carForm').addEventListener('submit',async e=>{
+};
 
-e.preventDefault();if(!admin||!user){message('adminMessage','Trebuie să fii autentificat ca administrator.',true);return}
+function resetForm() {
 
-let old=cars.find(c=>String(c.id)===String(editing));
+  editing = null;
 
-let existing=old?imgs(old):[];
+  $('carForm').reset();
 
-let files=[...$('photos').files];
+  $('city').value = 'Botoșani';
 
-$('saveButton').disabled=true;$('saveButton').textContent='Se salvează...';
+  $('published').value = 'true';
 
-try{
+  $('formTitle').textContent = 'Adaugă autoturism';
 
-let uploaded=[];
+  $('saveButton').textContent = 'Adaugă autoturism';
 
-for(let file of files){
+  $('cancelEdit').classList.add('hidden');
 
-if(!file.type.startsWith('image/'))throw Error('Selectează doar fișiere imagine.');
+  $('photos').value = '';
 
-if(file.size>12*1024*1024)throw Error('Fiecare fotografie trebuie să aibă maximum 12 MB.');
-
-let path=Date.now()+'-'+Math.random().toString(36).slice(2)+'-'+file.name.replace(/[^a-zA-Z0-9._-]/g,'_');
-
-let {error}=await db.storage.from('car-images').upload(path,file,{upsert:false,contentType:file.type});
-
-if(error)throw error;
-
-let {data}=db.storage.from('car-images').getPublicUrl(path);
-
-uploaded.push(data.publicUrl);
+  $('photoHelp').textContent = 'La editare, fotografiile noi se adaugă la cele existente.';
 
 }
 
-let photoList=[...existing,...uploaded];
+$('cancelEdit').onclick = resetForm;
 
-let payload={make:$('make').value.trim(),model:$('model').value.trim(),year:Number($('year').value),price:Number($('price').value),mileage:$('mileage').value===''?null:Number($('mileage').value),fuel:$('fuel').value||null,city:$('city').value.trim()||'Botoșani',description:$('description').value,image_urls:photoList,image_url:photoList[0]||null,published:$('published').value==='true'};
+$('carForm').addEventListener('submit', async e => {
 
-let result=old?await db.from('cars').update(payload).eq('id',old.id):await db.from('cars').insert(payload);
+  e.preventDefault();
 
-if(result.error)throw result.error;
+  if (!admin || !user) {
 
-message('adminMessage',old?'Anunțul a fost actualizat.':'Autoturismul a fost adăugat.');
+    message('adminMessage', 'Trebuie să fii autentificat ca administrator.', true);
 
-resetForm();await loadCars();
+    return;
 
-}catch(err){console.error(err);message('adminMessage','Eroare la salvare: '+(err.message||'verifică permisiunile Supabase.'),true)}
+  }
 
-finally{$('saveButton').disabled=false;$('saveButton').textContent=editing?'Salvează modificările':'Adaugă autoturism'}
+  const old = cars.find(c => String(c.id) === String(editing));
+
+  const existing = old ? imgs(old) : [];
+
+  const files = [...$('photos').files];
+
+  $('saveButton').disabled = true;
+
+  $('saveButton').textContent = 'Se salvează...';
+
+  try {
+
+    const uploaded = [];
+
+    for (const file of files) {
+
+      if (!file.type.startsWith('image/')) {
+
+        throw new Error('Selectează doar fișiere imagine.');
+
+      }
+
+      if (file.size > 12 * 1024 * 1024) {
+
+        throw new Error('Fiecare fotografie trebuie să aibă maximum 12 MB.');
+
+      }
+
+      const path = Date.now() + '-' +
+
+        Math.random().toString(36).slice(2) + '-' +
+
+        file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+
+      const {error: uploadError} = await db.storage
+
+        .from('car-images')
+
+        .upload(path, file, {upsert:false, contentType:file.type});
+
+      if (uploadError) throw uploadError;
+
+      const {data} = db.storage.from('car-images').getPublicUrl(path);
+
+      const publicUrl = safeUrl(data?.publicUrl);
+
+      if (!publicUrl) {
+
+        throw new Error('Fotografia s-a încărcat, dar linkul ei nu este valid.');
+
+      }
+
+      uploaded.push(publicUrl);
+
+    }
+
+    const photoList = [...new Set([...existing, ...uploaded])];
+
+    const payload = {
+
+      make: $('make').value.trim(),
+
+      model: $('model').value.trim(),
+
+      year: Number($('year').value),
+
+      price: Number($('price').value),
+
+      mileage: $('mileage').value === '' ? null : Number($('mileage').value),
+
+      fuel: $('fuel').value || null,
+
+      city: $('city').value.trim() || 'Botoșani',
+
+      description: $('description').value,
+
+      image_urls: photoList,
+
+      image_url: photoList[0] || null,
+
+      published: $('published').value === 'true'
+
+    };
+
+    const result = old
+
+      ? await db.from('cars').update(payload).eq('id', old.id)
+
+      : await db.from('cars').insert(payload);
+
+    if (result.error) throw result.error;
+
+    message('adminMessage',
+
+      old ? 'Anunțul a fost actualizat.' : 'Autoturismul a fost adăugat.');
+
+    resetForm();
+
+    await loadCars();
+
+  } catch (err) {
+
+    console.error('Eroare la salvare:', err);
+
+    message('adminMessage', 'Eroare la salvare: ' + (err.message || 'Verifică permisiunile Supabase.'), true);
+
+  } finally {
+
+    $('saveButton').disabled = false;
+
+    $('saveButton').textContent = editing ? 'Salvează modificările' : 'Adaugă autoturism';
+
+  }
 
 });
 
-function startEdit(id){
+function startEdit(id) {
 
-if(!admin)return;let c=cars.find(x=>String(x.id)===String(id));if(!c)return;
+  if (!admin) return;
 
-editing=c.id;
+  const c = cars.find(x => String(x.id) === String(id));
 
-for(let k of ['make','model','year','price','mileage','fuel','city','description'])$(k).value=c[k]??'';
+  if (!c) return;
 
-$('published').value=String(c.published);$('formTitle').textContent='Editează: '+c.make+' '+c.model;
+  editing = c.id;
 
-$('saveButton').textContent='Salvează modificările';$('cancelEdit').classList.remove('hidden');
+  for (const k of ['make','model','year','price','mileage','fuel','city','description']) {
 
-$('photoHelp').textContent='Fotografiile existente se păstrează. Fotografiile selectate se adaugă la galerie.';
+    $(k).value = c[k] ?? '';
 
-$('photos').value='';$('admin').scrollIntoView({behavior:'smooth'});
+  }
 
-}
+  $('published').value = String(c.published);
 
-async function deleteCar(id){
+  $('formTitle').textContent = 'Editează: ' + c.make + ' ' + c.model;
 
-if(!admin)return;let c=cars.find(x=>String(x.id)===String(id));if(!c)return;
+  $('saveButton').textContent = 'Salvează modificările';
 
-if(!confirm('Sigur vrei să ștergi anunțul '+c.make+' '+c.model+'?'))return;
+  $('cancelEdit').classList.remove('hidden');
 
-let {error}=await db.from('cars').delete().eq('id',c.id);
+  $('photoHelp').textContent = 'Fotografiile existente se păstrează. Fotografiile selectate se adaugă la galerie.';
 
-if(error){message('adminMessage','Nu s-a putut șterge: '+error.message,true);return}
+  $('photos').value = '';
 
-if(String(editing)===String(id))resetForm();
-
-message('adminMessage','Anunț șters.');await loadCars();
+  $('admin').scrollIntoView({behavior:'smooth'});
 
 }
 
-function openDetail(id){
+async function deleteCar(id) {
 
-let c=cars.find(x=>String(x.id)===String(id));if(!c)return;
+  if (!admin) return;
 
-detailPhotos=imgs(c);let photos=detailPhotos;
+  const c = cars.find(x => String(x.id) === String(id));
 
-$('detailContent').innerHTML=`<h2>${esc(c.make)} ${esc(c.model)}</h2><div class="price">${money(c.price)}</div>${photos.length?`<img id="bigPhoto" class="bigphoto" src="${esc(photos[0])}" alt="${esc(c.make)} ${esc(c.model)}"><div class="thumbs">${photos.map((u,i)=>`<img src="${esc(u)}" alt="Fotografia ${i+1}" data-photo="${i}">`).join('')}</div>`:'<p>Nu sunt disponibile fotografii.</p>'}<div class="specs"><p>An fabricație: ${esc(c.year)}</p><p>Kilometraj: ${c.mileage==null?'Nespecificat':Number(c.mileage).toLocaleString('ro-RO')+' km'}</p><p>Combustibil: ${esc(c.fuel||'Nespecificat')}</p><p>Localitate: ${esc(c.city||'Botoșani')}</p><p>Număr fotografii: ${photos.length}</p></div><h3>Descriere</h3><div class="desc">${esc(c.description||'Nu a fost adăugată o descriere.')}</div><p><a class="btn" href="https://wa.me/40746621051?text=${encodeURIComponent('Bună ziua, mă interesează '+c.make+' '+c.model)}">Întreabă pe WhatsApp</a></p>`;
+  if (!c) return;
 
-$('detailModal').classList.remove('hidden');
+  if (!confirm('Sigur vrei să ștergi anunțul ' + c.make + ' ' + c.model + '?')) return;
+
+  const {error} = await db.from('cars').delete().eq('id', c.id);
+
+  if (error) {
+
+    message('adminMessage', 'Nu s-a putut șterge: ' + error.message, true);
+
+    return;
+
+  }
+
+  if (String(editing) === String(id)) resetForm();
+
+  message('adminMessage', 'Anunț șters.');
+
+  await loadCars();
 
 }
 
-document.addEventListener('click',e=>{
+function openDetail(id) {
 
-let b=e.target.closest('button');
+  const c = cars.find(x => String(x.id) === String(id));
 
-if(b?.dataset.detail)openDetail(b.dataset.detail);
+  if (!c) return;
 
-if(b?.dataset.edit)startEdit(b.dataset.edit);
+  detailPhotos = imgs(c);
 
-if(b?.dataset.delete)deleteCar(b.dataset.delete);
+  const photos = detailPhotos;
 
-let thumb=e.target.closest('[data-photo]');
+  $('detailContent').innerHTML = `
 
-if(thumb){let i=Number(thumb.dataset.photo);$('bigPhoto').src=detailPhotos[i]}
+    <h2>${esc(c.make)} ${esc(c.model)}</h2>
+
+    <div class="price">${money(c.price)}</div>
+
+    ${photos.length
+
+      ? `<img id="bigPhoto" class="bigphoto" src="${esc(photos[0])}" alt="${esc(c.make)} ${esc(c.model)}">
+
+         <div class="thumbs">${photos.map((u,i) =>
+
+           `<img src="${esc(u)}" alt="Fotografia ${i+1}" data-photo="${i}">`
+
+         ).join('')}</div>`
+
+      : '<p>Nu sunt disponibile fotografii.</p>'}
+
+    <div class="specs">
+
+      <p>An fabricație: ${esc(c.year)}</p>
+
+      <p>Kilometraj: ${c.mileage == null ? 'Nespecificat' : Number(c.mileage).toLocaleString('ro-RO') + ' km'}</p>
+
+      <p>Combustibil: ${esc(c.fuel || 'Nespecificat')}</p>
+
+      <p>Localitate: ${esc(c.city || 'Botoșani')}</p>
+
+      <p>Număr fotografii: ${photos.length}</p>
+
+    </div>
+
+    <h3>Descriere</h3>
+
+    <div class="desc">${esc(c.description || 'Nu a fost adăugată o descriere.')}</div>
+
+    <p><a class="btn" href="https://wa.me/40746621051?text=${encodeURIComponent('Bună ziua, mă interesează ' + c.make + ' ' + c.model)}">Întreabă pe WhatsApp</a></p>`;
+
+  $('detailModal').classList.remove('hidden');
+
+}
+
+document.addEventListener('click', e => {
+
+  const b = e.target.closest('button');
+
+  if (b?.dataset.detail) openDetail(b.dataset.detail);
+
+  if (b?.dataset.edit) startEdit(b.dataset.edit);
+
+  if (b?.dataset.delete) deleteCar(b.dataset.delete);
+
+  const thumb = e.target.closest('[data-photo]');
+
+  if (thumb) {
+
+    const i = Number(thumb.dataset.photo);
+
+    const big = $('bigPhoto');
+
+    if (big && detailPhotos[i]) big.src = detailPhotos[i];
+
+  }
 
 });
 
-$('closeModal').onclick=()=>$('detailModal').classList.add('hidden');
+$('closeModal').onclick = () => $('detailModal').classList.add('hidden');
 
-$('detailModal').addEventListener('click',e=>{if(e.target===$('detailModal'))$('detailModal').classList.add('hidden')});
+$('detailModal').addEventListener('click', e => {
 
-['search','fuelFilter','minPrice','maxPrice'].forEach(id=>$(id).addEventListener('input',render));
+  if (e.target === $('detailModal')) $('detailModal').classList.add('hidden');
 
-db.auth.onAuthStateChange((_event,session)=>{
+});
 
-setTimeout(()=>{user=session?.user||null;admin=!!user&&user.app_metadata?.role==='admin';setAdmin();loadCars()},0);
+['search','fuelFilter','minPrice','maxPrice'].forEach(id =>
+
+  $(id).addEventListener('input', render)
+
+);
+
+db.auth.onAuthStateChange((_event, session) => {
+
+  setTimeout(() => {
+
+    user = session?.user || null;
+
+    admin = !!user && user.app_metadata?.role === 'admin';
+
+    setAdmin();
+
+    loadCars();
+
+  }, 0);
 
 });
 
